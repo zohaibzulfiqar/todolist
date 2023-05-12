@@ -1,0 +1,149 @@
+.todoWrapper {
+	width: 100%;
+	max-width: 400px;
+	margin: 0px auto;
+	padding: 20px;
+	height: 100%;
+
+	.todoInnerWrapper {
+		box-shadow: 0px 0px 3px -1px rgba(0, 0, 0, 0.4);
+		border-radius: 4px;
+		height: 100%;
+		position: relative;
+		padding: 50px 0px 58px;
+		background: #fff;
+		overflow: hidden;
+
+		&.showForm {
+			padding-bottom: 106px;
+		}
+
+		.todoheader {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			border-bottom: 1px solid #eee;
+			font-size: 24px;
+			font-weight: 500;
+			padding: 10px;
+			width: 100%;
+		}
+		.todoScrollWrapper {
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+
+			.todoScrollInnerWrapper {
+				padding: 10px;
+			}
+		}
+		.noDataFound {
+			font-size: 14px;
+			text-align: center;
+			div {
+				padding: 10px;
+			}
+		}
+		.addTaskWrapper {
+			.addTaskButtonWrapper {
+				position: absolute;
+				z-index: 2;
+				width: 100%;
+				padding: 10px;
+				border-top: 1px solid #eee;
+				bottom: 0px;
+				left: 0px;
+				.addTaskButton {
+					display: flex;
+					justify-content: center;
+				}
+			}
+			.addTaskForm {
+				position: absolute;
+				z-index: 2;
+				width: 100%;
+				padding: 10px;
+				border-top: 1px solid #eee;
+				bottom: 0px;
+				left: 0px;
+				label input {
+					width: 100%;
+					display: block;
+					padding: 10px;
+					border: 2px solid #ccc;
+					border-radius: 4px;
+					&:hover {border-color: #eee}
+					&:focus, &:active, &:focus-visible {border-color: #04AA6D !important}
+				}
+			}
+			.formButton {
+				padding-top: 10px;
+				display: flex;
+				justify-content: space-between;
+				.button {width: 49%;}
+			}
+		}
+	}
+}
+.todoTaskList {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	> li {
+		position: relative;
+		border-radius: 4px;
+		padding: 10px;
+		padding-right: 20px;
+		border: 1px solid #eee;
+		margin-top: 15px;
+		overflow: hidden;
+		cursor: pointer;
+
+		&:first-child {margin-top: 0px;}
+		p {
+			margin: 0px;
+		}
+		span {
+			position: absolute;
+			right: -50px;
+			top: 50%;
+			margin-top: -13px;
+			font-size: 12px;
+			opacity: 0;
+		}
+		&:hover {
+			span {
+				right: 10px;
+				opacity: 1;
+			}
+		}
+	}
+}
+.button {
+	padding: 10px;
+	border-radius: 4px;
+	display: block;
+	text-align: center;
+	cursor: pointer;
+	&.btn-primary {	
+		color: #fff;
+		background: #04AA6D;
+		border: 1px solid #04AA6D;
+	}
+	&.btn-primary-outlined {
+		color: #04AA6D;
+		background: transparent;
+		border: 1px solid #04AA6D;
+	}
+	&.btn-sm {
+		padding: 5px;
+	}
+}
+.hidden {
+	opacity: 0;
+	height: 0px !important;
+	overflow: hidden;
+	&.hiddentop {transform: translate(0px, -100%) }
+	&.hiddenbottom {transform: translate(0px,100%) }
+}
+.w-100 {width: 100%;}
